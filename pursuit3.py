@@ -2,7 +2,7 @@ import sys
 import random
 import ast
 
-TAU = 0.69	   		#lexicon entry threshold
+TAU = 0.69	    #lexicon entry threshold
 GAMMA = 0.01        #learning rate
 LAMBDA = 0.001      #smoothing factor
 
@@ -25,7 +25,6 @@ def reward(word, utt_meanings):
 	"""Returns True if most probable meaning is confirmed, False otherwise"""
 	max_asc = max(asc[word])
 	max_sample_idx = random.choice([idx for idx, item in enumerate(asc[word]) if item==max_asc])
-	#max_sample_idx = [idx for idx, item in enumerate(asc[word]) if item==max_asc][0]
 	most_prob_meaning = all_meanings[max_sample_idx]
 	if most_prob_meaning in utt_meanings:
 		return True, max_sample_idx
