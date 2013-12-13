@@ -17,7 +17,6 @@ def initialize(word, utt_meanings):
 	"""Pairs unseen word with minimum best label meaning equalling to GAMMA"""
 	best_labels = [(meaning, get_max_asc(meaning)) for meaning in utt_meanings]
 	minval = min(best_labels, key = lambda x:x[1])
-	#min_sample = random.choice([item for item in best_labels if item[1]==minval])
 	idx = all_meanings.index(minval[0])
 	asc[word][idx] = GAMMA
 	
